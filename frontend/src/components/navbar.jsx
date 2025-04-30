@@ -15,8 +15,8 @@ const navbar = () => {
             <FaBarsProgress className="size-7"/>
           </Link>
           {/* serch input*/ }
-          <div>
-            <BsSearch />
+          <div className="relative sm:w-72 w-40 space-x-2">
+            <BsSearch className="absolute inline-block left-3 inset-y-2 "/>
             <input type="text" placeholder="Search Here"  
             className="bg-[#EAEAEA] w-full py-1 md:px-8 px-6 rounded-md 
             forcus:outline-none" 
