@@ -11,7 +11,7 @@ import avatarImg from "../assets/avatar.png";
 
 const navigation=[
   {name:"Dashboard",href:"/dashboard"},
-  {name:"Ordes",href:"/order"},
+  {name:"Orders",href:"/order"},
   {name:"Cart Page",href:"/Cart"},
   {name:"Check Out",href:"/checkout"},
 ]
@@ -65,7 +65,7 @@ const navbar = () => {
               <ul className="py-2">
                 {
                   navigation.map((item)=> (
-                    <li>
+                    <li key={item.name} onClick={() => setIsDropdownOpen(false)}>
                       <Link to={item.href} className="block px-4 py-2 text-sm hover:bg-gray-100">
                         {item.name}
                       </Link>
