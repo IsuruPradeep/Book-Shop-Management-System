@@ -2,7 +2,8 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import 'swiper/css/navigation'; 
+import { Pagination, Navigation } from 'swiper/modules';
 
 import news1 from '../../assets/news/news-1.png';
 import news2 from '../../assets/news/news-2.png';
@@ -50,6 +51,8 @@ const News = () => {
         <Swiper
         slidesPerView={1}
         spaceBetween={30}
+        navigation={true}
+        
        
         breakpoints={{
           640: {
@@ -65,7 +68,7 @@ const News = () => {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         
@@ -82,7 +85,7 @@ const News = () => {
                             <div className='w-10 h-[4px] bg-primary mb-5'></div>
                             <p className='text-sm text-gray-600'>{item.description}</p>
                         </div>
-                        <div>
+                        <div className='flex-shrink-0'>
                             <img src={item.image} alt="" className='w-full object-cover'/>
                         </div>
                     </div>
