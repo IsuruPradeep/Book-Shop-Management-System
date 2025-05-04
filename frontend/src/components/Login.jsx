@@ -12,7 +12,15 @@ const Login = () => {
         </div>
         <button type="submit" class="w-full mb-3 bg-indigo-500 py-2.5 rounded-full text-white">Log in</button>
     </form>
-    
+    <p class="text-center mt-4">Don’t have an account? <a href="#" class="text-blue-500 underline">Signup</a></p>
+    <button type="button" class="w-full flex items-center gap-2 justify-center mt-5 bg-black py-2.5 rounded-full text-white">
+        <img class="h-4 w-4" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/login/appleLogo.png" alt="appleLogo"/>
+        Log in with Apple
+    </button>
+    <button type="button" class="w-full flex items-center gap-2 justify-center my-3 bg-white border border-gray-500/30 py-2.5 rounded-full text-gray-800">
+        <img class="h-4 w-4" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/login/googleFavicon.png" alt="googleFavicon"/>
+        Log in with Apple
+    </button>
 </div>
   )
 }
