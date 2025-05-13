@@ -15,7 +15,7 @@ const navigation=[
   {name:"Cart Page",href:"/Cart"},
   {name:"Check Out",href:"/checkout"},
 ]
-const navbar = () => {
+const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   
   const currentUser=false;
@@ -87,4 +87,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
