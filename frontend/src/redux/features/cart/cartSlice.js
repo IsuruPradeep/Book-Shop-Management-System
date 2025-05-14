@@ -23,7 +23,7 @@ const cartSlice = createSlice({
           });
 
       } else (
-                  Swal.fire({
+        Swal.fire({
             title: "Already Added to the Cart?",
             text: "You won't be able to revert this!",
             icon: "warning",
@@ -33,10 +33,17 @@ const cartSlice = createSlice({
             confirmButtonText: "OK!"
           })
       )
+    },
+    removeFromCart:(state, action) =>{
+      state.cartItems=state.cartItems.filter(item => item._id !== action.payload._id)
+    },
+
+    clearCart : (state) => {
+      state.cartItems =[]
     }
   }
 })
 
 // Export the action
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart,clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
