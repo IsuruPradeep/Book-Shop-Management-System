@@ -6,6 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 import { PiHeartFill } from "react-icons/pi";
 import { PiShoppingCartDuotone } from "react-icons/pi";
 import avatarImg from "../assets/avatar.png";
+import { useSelector } from 'react-redux';
 
 
 
@@ -17,7 +18,8 @@ const navigation=[
 ]
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  
+  const cartItems= useSelector(state => state.cart.cartItems);
+
   const currentUser=false;
   return (
     <header className="max-w-screen-2xl mx-auto px-10 py-6">
@@ -79,7 +81,13 @@ const Navbar = () => {
         <Link to="/cart" className="bg-primary p-1 sm:px-6 px-2 flex items-center 
         rounded-sm">
           <PiShoppingCartDuotone className="size-7"/>
-          <span className="text-sm font-semibold sm:ml-1">0</span>
+          {
+            cartItems.length > 0 ? <sapan className='text-sm font-semibold 
+            sm:ml'>{cartItems.length}</sapan> :<span className="text-sm 
+            font-semibold sm:ml-1">0</span>
+ 
+          }
+
         </Link>
         </div>
       </nav>

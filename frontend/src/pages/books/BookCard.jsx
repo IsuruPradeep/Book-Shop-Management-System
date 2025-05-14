@@ -9,7 +9,7 @@ const BookCard=({book})=> {
   const dispatch= useDispatch();
   
   const handleAddToCart = (product)=>{
-    dispatch(addToCart())
+    dispatch(addToCart(product))
   }
   return (
     <div className=" rounded-lg transition-shadow duration-300">
