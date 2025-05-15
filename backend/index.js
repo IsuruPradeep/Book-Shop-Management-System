@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 
 
 const port = process.env.PORT || 5000;
+require('dotenv').config()
 
-// routes
+
+// A4fuFn6MxGEx3ULe
 
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/test');
+  await mongoose.connect(process.env.DB_URL);
     app.use('/', (req, res) => {
     res.send("Book store Server is running!");
 })
