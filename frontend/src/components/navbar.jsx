@@ -95,8 +95,8 @@ const Navbar = () => {
         rounded-sm">
           <PiShoppingCartDuotone className="size-7"/>
           {
-            cartItems.length > 0 ? <sapan className='text-sm font-semibold 
-            sm:ml'>{cartItems.length}</sapan> :<span className="text-sm 
+            cartItems.length > 0 ? <span className='text-sm font-semibold 
+            sm:ml'>{cartItems.length}</span> :<span className="text-sm 
             font-semibold sm:ml-1">0</span>
  
           }
