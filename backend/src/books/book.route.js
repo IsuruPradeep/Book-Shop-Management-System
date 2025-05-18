@@ -24,10 +24,10 @@ router.get("/:id", getSingleBook)
 
 // update a book endpoint
 
-router.put("/edit/:id", updateBook)
+router.put("/edit/:id", verifyAdminToken , updateBook)
 
 //delete book
 
-router.delete("/:id",deleteABook)
+router.delete("/:id", verifyAdminToken , deleteABook)
 
 module.exports = router;
