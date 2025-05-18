@@ -46,7 +46,7 @@ const CheckoutPage = () => {
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Yes,It's Okay!"
             });
-            navigate("/orders")
+            navigate("/order")
         } catch (error) {
             console.error("Error place an order", error);
             alert("Failed to place an order")
