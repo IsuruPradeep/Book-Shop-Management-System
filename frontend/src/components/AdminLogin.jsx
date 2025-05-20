@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import axios from 'axios';
 import getBaseUrl from '../utils/baseURL';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const AdminLogin = () => {
     const [message, setMessage] = useState("")
@@ -20,17 +21,17 @@ const AdminLogin = () => {
     const onSubmit = async (data) => {
         console.log(data)
         try {
-             const response = await axios.post(`${getBaseUrl()}/api/auth/admin`, data,{
+            const response = await axios.post(`${getBaseUrl()}/api/auth/admin`, data, {
                 headers: {
                     headers: {
-                        'Content-Type':  'application/json'
+                        'Content-Type': 'application/json'
                     }
                 }
-             })
+            })
 
             const auth = response.data;
             console.log(auth)
-            if (auth.token){
+            if (auth.token) {
                 localStorage.setItem('token', auth.token);
 
                 setTimeout(() => {
@@ -40,11 +41,15 @@ const AdminLogin = () => {
                 }, 3600 * 1000)
             }
 
-            alert("Admin Login successful!")
+            Swal.fire({
+                title: "Admin login successfull!",
+                icon: "success",
+                draggable: true
+            });
             navigate("/dashboard")
 
         } catch (error) {
-            setMessage("Please provide a valid Email and Password")
+            setMessage("Please provide a valid Username and Password")
             console.error(error)
         }
     }
