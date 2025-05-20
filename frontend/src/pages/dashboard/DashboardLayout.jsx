@@ -1,14 +1,17 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+
+import React from 'react';
 import Loading from '../../components/Loading';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate} from 'react-router-dom';
 import { HiViewGridAdd } from "react-icons/hi";
 import { MdOutlineManageHistory } from "react-icons/md";
 
+
 const DashboardLayout = () => {
-   
+    const navigate = useNavigate();
     const handleLogout = () => {
-    }
+    localStorage.removeItem('token'); 
+    navigate('/login');
+  };
    
   return (
     <section className="flex md:bg-gray-100 min-h-screen overflow-hidden">
