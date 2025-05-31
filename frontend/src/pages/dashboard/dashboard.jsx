@@ -69,8 +69,9 @@ const dashboard = () => {
                       </svg>
                     </div>
                     <div>
-                      <span className="inline-block text-2xl font-bold">{data?.trendingBooks}</span>
-                      <span className="inline-block text-xl text-gray-500 font-semibold">(13%)</span>
+                      <span className="inline-block text-2xl font-bold">{data?.trendingBooks } </span>
+                      <span className="inline-block text-xl text-gray-500 font-semibold"> ({data?.totalBooks ? ((data.trendingBooks / data.totalBooks) * 100).toFixed(2) : '0.00'}%)</span>
+
                       <span className="block text-gray-500">Trending Books in This Month</span>
                     </div>
                   </div>
