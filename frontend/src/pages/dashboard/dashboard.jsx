@@ -102,7 +102,7 @@ const dashboard = () => {
                       </svg>
                     </div>
                     <div>
-                      <span className="block text-2xl font-bold">02</span>
+                      <span className="block text-2xl font-bold">{data?.totalOrders}</span>
                       <span className="block text-gray-500">Orders left</span>
                     </div>
                   </div>
