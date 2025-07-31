@@ -13,11 +13,10 @@ const CheckoutPage = () => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm()
 
-    const [createOrder, { isLoading, error }] = useCreateOrderMutation();
+    const [createOrder, { isLoading }] = useCreateOrderMutation();
     const navigate = useNavigate()
 
     const [isChecked, setIsChecked] = useState(false)
